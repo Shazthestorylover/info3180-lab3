@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form method = "POST" action = "{{url_for('contact')}}">
+	{{form.csrf_token}}
+	
+	{{form.name.label}}
+	{{form.name(size = 20)}}
+	
+	{{form.email.label}}
+	{{form.email()}}
+	
+	{{form.subject.label}}
+	{{form.subject()}}
+	
+	{{form.message.label}}
+	{{form.message()}}
+	
+	<button class="button glow-button" type = "submit"> Send </button>
+</form>
+{% endblock %}
